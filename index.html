@@ -4,56 +4,33 @@
 	<head>
 		<script src="js/jquery.js"></script>
 		<script src="http://code.createjs.com/createjs-2014.12.12.min.js"></script>
-		<script src="js/greensock-js/TimelineMax.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.3.0/lodash.js"></script>
+		<script src="js/greensock-js/TimelineLite.min.js"></script>
 		<script src="js/greensock-js/easing/EasePack.min.js"></script>
-
+	
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.15.0/TimelineLite.min.js"></script>
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.15.0/TweenMax.min.js"></script>
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.15.0/easing/EasePack.min.js"></script>
+	
 		<style>
 			html{
 				height:100%;
 			}
 
-			body{
+			body, canvas{
 				padding:0;
 				margin:0;
 				height:100%;
+				overflow:hidden;
 			}
 		
 		</style>
 	</head>
 	<body>
 		<canvas id="myCanvas"></canvas>
-
-		<script>
-			var canvas = document.getElementById("myCanvas");
-				stage = new createjs.Stage("myCanvas"),
-	  			bkg = new createjs.Shape();
-
-
-    		function stageRender() {
-    			var text = new createjs.Text("Test text", "25px Helvetica", "white");
-    			
-    			text.textAlign = "center";
-    			text.textBaseline = "middle";
-    			
-    			canvas.width = document.body.clientWidth; 
-    			canvas.height = document.body.clientHeight;
-
-    			bkg.graphics.beginFill("black").drawRect(0,0, canvas.width, canvas.height);
-
-		  		stage.addChild(bkg);
-
-		  		text.x = canvas.width/2;
-		  		text.y = canvas.height/2;
-		  		
-    			stage.addChild(text);
-		  		stage.update();
-    		}
-
-    		window.addEventListener('resize', stageRender, false);
-	  		
-	  		//render the first time...
-	  		stageRender();
-
-		</script>
+		
+		<script src="js/globals.js"></script>
+		<script src="js/slides.js"></script>
+		<script src="js/main.js"></script>
 	</body>
 </html>

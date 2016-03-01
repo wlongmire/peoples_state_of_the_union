@@ -1,0 +1,375 @@
+#wrapper {
+	position: relative;
+    margin: 0px;
+    background: #999 url("../img/game_screen_wall.png");
+    background-size: 80px 60px;
+    height: 100%;
+    display: block;
+}
+
+#wrapper article {
+	height:100%;
+}
+
+.mission .mode_bar {
+	background-color: #bb3838;
+	color: #fce0e0;
+}
+
+.free_play .mode_bar {
+	background-color: #3888BB;
+	color:white;
+}
+
+.wall {
+	background-image: -webkit-gradient(
+		linear,
+		left top,
+		left bottom,
+		color-stop(0, #6B6D6E),
+		color-stop(1, #1F2121)
+	);
+	background-image: -o-linear-gradient(bottom, #6B6D6E 0%, #1F2121 100%);
+	background-image: -moz-linear-gradient(bottom, #6B6D6E 0%, #1F2121 100%);
+	background-image: -webkit-linear-gradient(bottom, #6B6D6E 0%, #1F2121 100%);
+	background-image: -ms-linear-gradient(bottom, #6B6D6E 0%, #1F2121 100%);
+	background-image: linear-gradient(to bottom, #6B6D6E 0%, #1F2121 100%);
+
+	height:45%;
+	width:100%;
+	position: fixed;
+    bottom: 0;
+}
+
+.game_container {
+    height: 100%;
+    padding-top:70px;
+    overflow: hidden;
+    white-space: nowrap;
+
+    position:relative;
+    z-index:900;
+}
+
+.game {
+	height:100%;
+	width:33.33%;
+	padding: 50px 40px 0 40px;
+
+	text-align: center;
+	
+	cursor:pointer;
+	
+	display:inline-block;
+	color:white;
+
+	min-width: 375px;
+
+	transition: all 0.3s ease;
+}
+
+
+.game h1 {
+	visibility: visible;
+	text-transform: uppercase;
+    font-size: 2em;
+    font-weight: bold;
+    letter-spacing: -2px;
+    color:black;
+}
+
+.game p {
+	visibility: hidden;
+	color:white;
+	width: 100%;
+
+  white-space: normal;
+  font-weight: normal;
+  font-size: 12px;
+  text-align: justify;
+
+  border-top: 2px white solid;
+  border-bottom: 2px white solid;
+
+  padding: 5px 0;
+  min-height: 100px;
+}
+
+.game_image {
+	position:relative;
+	top:-100px;
+	transition: top 0.3s ease;
+}
+
+
+.game_image span {
+	position: absolute;
+    margin-left: 43px;
+    margin-top: 80px;
+    visibility: hidden;
+}
+
+.mission .game:hover {
+	background: #de4545;
+}
+
+.free_play .game:hover {
+	background: #3888BB
+}
+
+.game h2 {
+    position: fixed;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    top: 66%;
+    background: #BB3838;
+    margin: 0px;
+    transform: rotate(-40deg);
+    padding: 30px;
+
+    opacity:0;
+
+    transition: opacity 0.3s ease;
+}
+.game.complete {
+	background-color: #4A4A4A;
+}
+
+.game.complete:hover {
+	background-color: #353535;
+}
+
+.game.complete:hover h2 {
+	opacity:1;
+}
+
+.game.complete:hover p {
+	visibility: hidden;
+}
+
+.game.complete:hover .game_image {
+	top:-100px;
+}
+
+.game.complete:hover .game_image span {
+    visibility: hidden;
+}
+
+
+.game:hover h1, .game:hover p {
+	visibility: visible;
+}
+
+.game:hover .game_image {
+	top:0px;
+}
+
+.game:hover .game_image span {
+    visibility: visible;
+}
+
+.controls {
+	position:absolute;
+	top:0;
+
+	width: 100%;
+	z-index:900;
+
+	width:50px;
+	height:100%;
+	
+	margin:0;
+
+	opacity:0;
+
+	transition: opacity 0.3s ease;
+}
+
+.mission .controls {
+	background-color: #bb3838;
+}
+
+.free_play .controls {
+	background-color: black;
+}
+
+.controls:hover {
+	opacity:1;
+}
+
+.left-control{
+	left:0;
+}
+
+.arrow {
+	position: absolute;
+    top: 50%;
+    width: 50%;
+    height: 30px;
+}
+
+.left-control .arrow {
+	left: 10px;
+}
+
+.right-control{
+	right:0;
+}
+
+.right-control .arrow {
+	right: 10px;
+}
+
+#gameModal {
+    display: none;
+    top: 0 !important;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    width: 100%; 
+    max-width: none;
+
+    display: block;
+    opacity: 1;
+    
+    background-color: transparent;
+    background-color: none;
+    height: 100%;
+    border: none;
+}
+
+.reveal-modal-bg {
+    background: rgba(0,0,0,0.8);
+}
+
+.arcade {
+  	user-select: none;
+
+  	background: url("../img/arcade-update.png") no-repeat;
+  	
+  	width: 1024px;
+  	height: 100%;
+  
+  	left: 0;
+ 	top: 0px;
+
+	margin: 0px auto;
+	margin-top: -700px;
+	  
+	z-index: 999;
+
+}
+
+.arcade_base {
+  	background: url("../img/arcade_base.png") repeat-y;
+  	width: 1024px;
+  	height: calc(100% - 766px);
+  	margin: 0 auto;
+}
+
+.screen {
+  width: 860px;
+  height: 550px;
+  margin: 0px auto;
+  color: white;
+  position: relative;
+}
+
+.arcade_controls {
+  text-align: center;
+  position: relative;
+}
+
+.arcade_controls button {
+  	background: url("../img/red_push_btn.png") no-repeat;
+  	
+  	cursor: pointer;
+  	height: 106px;
+  	width: 135px;
+  	border: none;
+  	background-color: transparent;
+  	margin-top: 6px;
+  	outline: none;
+
+   	top: 42px;
+    margin: 0px;
+}
+
+.arcade_controls button:active {
+  background: url("../img/red_push_btn-pushed_in.png") no-repeat;
+  background-color: transparent;
+}
+
+.arcade_controls #help_me {
+  	background: url("../img/help_button.png") no-repeat;
+  	width: 106px;
+  	height: 84px;
+  	position: absolute;
+   	top: 48px;
+    left: 70px;
+  	cursor: pointer;
+}
+
+.arcade_controls #help_me:active {
+  	background: url("../img/help_button_pushed-in.png") no-repeat;
+}
+
+.arcade_controls #pause {
+  	background: url("../img/pause_button.png") no-repeat;
+  	width: 106px;
+  	height: 84px;
+  	position: absolute;
+  	top: 48px;
+   	left: 200px;
+  	cursor: pointer;
+}
+
+.arcade_controls #pause:active {
+  background: url("../img/play_button.png") no-repeat;
+}
+
+/*game 1*/
+#input_array {
+  list-style: none
+}
+
+#input_array li {
+  padding:5px;
+}
+
+#input_array li input{
+  font-size: 17px;
+  padding:5px;
+  width:150px;
+  font-weight: bold;
+  text-align: center;
+}
+
+#trial_module {
+  display:none;
+  z-index:200;
+}
+
+.confirm_icon {
+  font-family: sans-serif;
+  text-transform: uppercase;
+  font-size: 12px;
+  padding: 9px;
+  background-color: green;
+  border-radius: 4px;
+  position: relative;
+  top: -2px;
+  font-weight: bold;
+  color: rgba(223, 223, 223);
+  opacity:0;
+  border:white solid 2px;
+}
+
+#admin {
+  z-index:210;
+  color:black;
+  background-color: white;
+  padding:10px;
+  opacity:0;
+}

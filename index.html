@@ -3,15 +3,22 @@
 <html>
 	<head>
 		<script src="js/jquery.js"></script>
+
+		<script src="js/greensock-js/plugins/TextPlugin.min.js"></script>
+
 		<script src="http://code.createjs.com/createjs-2014.12.12.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.3.0/lodash.js"></script>
-		<script src="js/greensock-js/TimelineLite.min.js"></script>
-		<script src="js/greensock-js/easing/EasePack.min.js"></script>
 	
-		<script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.15.0/TimelineLite.min.js"></script>
+
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.15.0/TimelineMax.min.js"></script>
+		<script src="https://code.createjs.com/soundjs-0.6.2.min.js"></script></head>
+
 		<script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.15.0/TweenMax.min.js"></script>
 		<script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.15.0/easing/EasePack.min.js"></script>
-	
+		
+		<link href='https://fonts.googleapis.com/css?family=Cabin:400,500,600' rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200' rel='stylesheet' type='text/css'>
+
 		<style>
 			html{
 				height:100%;
@@ -23,14 +30,47 @@
 				height:100%;
 				overflow:hidden;
 			}
+
+			video {  
+				position: fixed;
+
+				right: 0; 
+				bottom: 0; 
+				min-width: 100%; 
+				min-height: 100%; 
+				width: auto; 
+				height: auto; 
+				z-index: 100;  
+				background-size: cover;  
+	
+				opacity:0;
+			}
 		
 		</style>
 	</head>
 	<body>
+		<video id="vid" width="320" height="240" paused>
+			<source src="video/Cathy_Linh_che.ogv" type="video/ogv">
+			<source src="video/Cathy_Linh_che.webm" type="video/webm">
+		</video>
 		<canvas id="myCanvas"></canvas>
 		
 		<script src="js/globals.js"></script>
 		<script src="js/slides.js"></script>
 		<script src="js/main.js"></script>
+
+		<script>
+
+		Rendering.init();
+		
+		Rendering.load().done(function(){
+			
+			Rendering.initStage();
+
+			Rendering.initSlides();
+
+		});
+
+		</script>
 	</body>
 </html>
